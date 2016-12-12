@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What's for lunch</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<h1 class="text-center">Can't decide for yourself?</h1>
+<div class="row">
+		<div class="col-xs-12 text-center" style="margin: 0 auto;">
+			<button class="pick-btn btn btn-primary">What's for lunch</button>
+		</div>
+		<div id="eatHere" class="col-xs-12 text-center" style="margin: 0 auto;"></div>
+	</div>
+</div>
+<script   src="https://code.jquery.com/jquery-3.1.1.slim.js"   integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="   crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var rests = [
+		{name:'Applebees', price: '$$'},
+		{name:'Arbys', price: '$$'},
+		{name:'Blimpie', price: '$$'},
+		{name:'Bojangles', price: '$'},
+		{name:'Briar Patch', price: '$$'},
+		{name:'Buffalo Wild Wings', price: '$$$'},
+		{name:'Buffalos', price: '$$$'},
+		{name:'Captain Deez', price: '$$'},
+		{name:'Checkers', price: '$'},
+		{name:'Cheeseburger Bobbys', price: '$$'},
+		{name:'Chick-fil-a', price: '$$'},
+		{name:'Chicken World', price: '$$'},
+		{name:'Chilis', price: '$$'},
+		{name:'China Garden', price: '$'},
+		{name:'Dairy Queen', price: '$'},
+		{name:'Dominos', price: '$$'},
+		{name:'Firehouse Subs', price: '$$'},
+		{name:'Five Guys', price: '$$$'},
+		{name:'Folks', price: '$$$'},
+		{name:'Hai-Hai', price: '$$$'},
+		{name:'Hardees', price: '$$'},
+		{name:'Hooters', price: '$$$'},
+		{name:'Huey Lueys', price: '$$$'},
+		{name:'Ians Oven', price: '$'},
+		{name:'IHOP', price: '$$$'},
+		{name:'Jalapeno Joes', price: '$$'},
+		{name:'Jim N Nicks', price: '$$$'},
+		{name:'Johnnys BBQ', price: '$$'},
+		{name:'Johnnys Pizza', price: '$$'},
+		{name:'KFC', price: '$'},
+		{name:'Krystal', price: '$'},
+		{name:'La Parilla :*(', price: '$$'},
+		{name:'Little Ceasars', price: '$'},
+		{name:'Longhorn', price: '$$$'},
+		{name:'Marcos', price: '$$'},
+		{name:'Martins', price: '$$'},
+		{name:'McNaldos', price: '$'},
+		{name:'Mellow Mushroom', price: '$$$'},
+		{name:'Moes', price: '$$'},
+		{name:'O Charlies', price: '$$$'},
+		{name:'Olive Tree', price: '$$$'},
+		{name:'Panda Express', price: '$$'},
+		{name:'Pollo Tropical', price: '$$'},
+		{name:'Popeyes', price: '$$'},
+		{name:'Publix', price: '$$'},
+		{name:'Papa Johns', price: '$$'},
+		{name:'Pizza Hut', price: '$$'},
+		{name:'Steak and Shake', price: '$$'},
+		{name:'Stevie Bs', price: '$$'},
+		{name:'Subway', price: '$$'},
+		{name:'Taco Bell', price: '$'},
+		{name:'Taki', price: '$$$'},
+		{name:'Tequila', price: '$$'},
+		{name:'Texas Road House', price: '$$'},
+		{name:'Thai Mango', price: '$$'},
+		{name:'Waffle House', price: '$$'},
+		{name:'Wendys', price: '$'},
+		{name:'Zaxbys', price: '$$'}
+	];
+
+	$(document).on('click', '.pick-btn', function(){
+		pick();
+	});
+
+	function pick(){
+		var len = rests.length;
+		var i = getRandomInt(0, len);
+		var whichOne = rests[i];
+		$('#eatHere').html('<h3>' + whichOne.name + ' : ' + whichOne.price + '</h3>');
+	}
+
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
+</script>
+</body>
+</html>
